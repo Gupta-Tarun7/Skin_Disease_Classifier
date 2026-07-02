@@ -207,4 +207,5 @@ def predict():
 
 if __name__ == "__main__":
     # threaded=True so the warmed-up model can serve while staying responsive
-    app.run(host="0.0.0.0", port=5000, debug=False, threaded=True)
+    port = int(os.environ.get("PORT", 7860))
+    app.run(host="0.0.0.0", port=port, debug=False, threaded=True)
