@@ -27,6 +27,17 @@ import keras
 print(f"TensorFlow version: {tf.__version__}")
 print(f"Keras version: {keras.__version__}")
 
+# Workaround for a Keras bug: the saved model's config includes a
+# 'quantization_config' key on Dense layers that this Keras version's
+# Dense.__init__ doesn't accept, causing deserialization to fail.
+# This patch makes Dense silently ignore that key so the model can load.
+_original_dense_init = keras.layers.Dense.__init__
+
+def _patched_dense_init(self, *args, **kwargs):
+    kwargs.pop("quantization_config", None)
+    _original_dense_init(self, *args, **kwargs)
+
+keras.layers.Dense.__init__ = _patched_dense_init
 # --------------------------------------------------------------------------
 # Config — must match training notebook exactly
 # --------------------------------------------------------------------------
