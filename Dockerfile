@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+RUN ls -la /app
 
 ENV PORT=7860
 EXPOSE 7860
