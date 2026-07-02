@@ -26,7 +26,13 @@ from tensorflow.keras.applications.efficientnet import preprocess_input
 # --------------------------------------------------------------------------
 # Config — must match training notebook exactly
 # --------------------------------------------------------------------------
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "skin_model_phase2_improved.keras")
+from huggingface_hub import hf_hub_download
+
+MODEL_PATH = hf_hub_download(
+    repo_id="Gupta-Tarun/dermai-skin-classifier",
+    filename="skin_model_phase2_improved.keras",
+    repo_type="space",
+)
 IMG_SIZE = 456  # EfficientNetB5 input size used during training
 TTA_PASSES = 3  # number of augmented forward passes averaged per prediction
 

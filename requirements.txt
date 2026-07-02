@@ -3,3 +3,4 @@ flask>=3.0
 flask-cors>=4.0
 pillow>=10.0
 numpy>=1.26
+huggingface_hub>=0.23
