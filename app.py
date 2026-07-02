@@ -23,6 +23,10 @@ from PIL import Image, ImageEnhance
 import tensorflow as tf
 from tensorflow.keras.applications.efficientnet import preprocess_input
 
+import keras
+print(f"TensorFlow version: {tf.__version__}")
+print(f"Keras version: {keras.__version__}")
+
 # --------------------------------------------------------------------------
 # Config — must match training notebook exactly
 # --------------------------------------------------------------------------
