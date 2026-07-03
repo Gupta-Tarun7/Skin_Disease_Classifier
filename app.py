@@ -88,9 +88,9 @@ MODEL_NAME = "EfficientNetB5 — Skin Disease Classifier v2 (TTA×3)"
 # metrics are the notebook's full 8-pass evaluation and are shown as the
 # benchmark for "this model with TTA," not a re-measurement of 3 passes.
 MODEL_METRICS = {
-    "top1_accuracy": 0.6067,
-    "top3_accuracy": 0.8124,
-    "auc_ovr": 0.9431,
+    "top1_accuracy": 0.6281,
+    "top3_accuracy": 0.8241,
+    "auc_ovr": 0.9426,
     "num_classes": 22,
     "train_images": 11128,
     "val_images": 2770,
